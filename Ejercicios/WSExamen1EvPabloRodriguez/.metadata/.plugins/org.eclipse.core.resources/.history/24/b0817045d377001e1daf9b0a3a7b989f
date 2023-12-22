@@ -1,0 +1,31 @@
+package pack;
+
+public class Ej4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		double mediaClase1=0,mediaClase2=0,mediaClase3=0;
+		int maxClase1=0,maxClase2=0,maxClase3=0;
+		int minClase1=11,minClase2=11,minClase3=11;
+		int sumaClase1=0,sumaClase2=0,sumaClase3=0;
+		
+		System.out.println("Clase 1");
+		for(int i=1;i<=5;i++) {
+			int nota=(int)(Math.random()*(10-0+1)+0);
+			System.out.println("Alumno "+i+" : "+nota);
+			sumaClase1+=nota;
+			if(nota>=maxClase1) {
+				maxClase1=nota;
+			}
+			if(nota<=minClase1) {
+				minClase1=nota;
+			}
+		}
+		mediaClase1=(double)(sumaClase1/5);
+		System.out.println("La nota maxima de la clase 1 es:"+maxClase1);
+		System.out.println("La nota minima de la clase 1 es:"+minClase1);
+		System.out.println("La media de la clase 1 es:"+mediaClase1);
+	}
+
+}

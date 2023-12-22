@@ -1,0 +1,107 @@
+package pack;
+public class Ej1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] arr = {1, 2, 1, 4, 7, 6, 7, 8, 9, 10};
+		
+		System.out.println("VECTOR:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		
+		rotar(arr, 3);
+		
+		System.out.println("VECTOR ROTADO");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		
+		/*duplicados(arr);
+		
+		System.out.println("VECTOR SIN DUPLICADOS:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();*/
+		int[]sub= {1,4,7};
+		subsecuencia(arr, sub);
+		
+		
+	}
+	
+	
+		static void rotar(int[]v,int nPosiciones) {
+			int aux[]=new int[v.length];
+			//lo copio
+			for(int i=v.length-1;i>=0;i--) {
+			aux[i]=v[i];
+			}
+			
+			for(int i=0;i<aux.length;i++) {
+				if(i+nPosiciones<=aux.length-1) {
+					v[i+nPosiciones]=aux[i];
+				}else {
+					v[(i+nPosiciones)%aux.length]=aux[i];
+		}
+	}
+}
+
+		
+	static void duplicados(int[]v) {
+		boolean repetido=false;
+		int aux[]=new int[0];
+		//lo copio
+		for(int i=0;i<v.length;i++) {
+			aux[i]=v[i];
+		}
+		for(int i=0;i<v.length;i++) {
+			int indice=i+1;
+				while(indice<v.length) {
+						if(v[i]==v[indice]) {
+							for(int j=indice;i<v.length;i++) {
+								aux[j]=aux[j+1];
+								
+							}
+							indice++;
+							repetido=true;
+								
+						}
+				}
+		}
+		
+		
+	}
+	
+	
+
+	
+	
+	
+	static void subsecuencia(int[] v, int[] secuencia) {
+    boolean repetido = false;
+
+    for (int i = 0; i <= v.length - secuencia.length && !repetido; i++) {
+        if (v[i] == secuencia[0]) {
+            repetido = true;
+
+            for (int j = 1; j < secuencia.length && found; j++) {
+                if (v[i + j] != secuencia[j]) {
+                    found = false;
+                }
+            }
+        }
+    }
+
+    if (repetido) {
+        System.out.println("La secuencia está en el array.");
+    } else {
+        System.out.println("La secuencia no está en el array.");
+    }
+}
+
+
+}

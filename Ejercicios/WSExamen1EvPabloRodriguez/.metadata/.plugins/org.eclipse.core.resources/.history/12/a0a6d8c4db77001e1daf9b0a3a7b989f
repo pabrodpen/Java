@@ -1,0 +1,43 @@
+package pack;
+import java.util.Scanner;
+public class Ej3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Numero de filas:");
+		int n=sc.nextInt();
+		int nAsteriscos=1;
+		int cont=1;
+		
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<n-i;j++) {
+				System.out.print("  ");
+			}
+			for(int k=0;k<nAsteriscos;k++) {
+				System.out.print(cont+" ");
+					if(cont>i) {
+						cont--;
+						while(cont>1) {
+								System.out.print(cont+" ");
+								cont--;
+						}
+					}else {
+						cont++;
+					}
+					
+				
+			}
+			cont=1;
+			nAsteriscos+=2;
+			
+			for(int l=0;l<n-i;l++) {
+				System.out.print("  ");
+			}
+			System.out.println();
+		}	
+
+	}
+}

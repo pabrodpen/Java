@@ -1,0 +1,57 @@
+package pack;
+
+public class Ej4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		double mediaClase=0,mediaAbs=0;
+		int maxClase=0;
+		int minClase=11;
+		int sumaClase=0;
+		int maxAbs=0,minAbs=0;
+		
+		for(int i=1;i<=5;i++) {
+			System.out.println("Clase"+i);
+			
+			int nota=(int)(Math.random()*(10-0+1)+0);
+			System.out.println("Alumno "+i+" : "+nota);
+			sumaClase+=nota;
+			if(nota>=maxClase) {
+				maxClase=nota;
+			}
+			if(nota<=minClase) {
+				minClase=nota;
+			}
+		}
+		mediaClase=sumaClase/5.0;
+		System.out.println("La nota maxima de la clase 1 es:"+maxClase1);
+		System.out.println("La nota minima de la clase 1 es:"+minClase1);
+		System.out.println("La media de la clase 1 es:"+mediaClase1);
+		
+		System.out.println();
+		System.out.println();
+		
+		
+		
+		
+		
+		/*System.out.println("Clase 2");
+		for(int i=1;i<=5;i++) {
+			int nota=(int)(Math.random()*(10-0+1)+0);
+			System.out.println("Alumno "+i+" : "+nota);
+			sumaClase2+=nota;
+			if(nota>=maxClase2) {
+				maxClase2=nota;
+			}
+			if(nota<=minClase2) {
+				minClase2=nota;
+			}
+		}
+		mediaClase2=sumaClase2/5.0;
+		System.out.println("La nota maxima de la clase 2 es:"+maxClase2);
+		System.out.println("La nota minima de la clase 2 es:"+minClase2);
+		System.out.println("La media de la clase 2 es:"+mediaClase2);*/
+	}
+
+}

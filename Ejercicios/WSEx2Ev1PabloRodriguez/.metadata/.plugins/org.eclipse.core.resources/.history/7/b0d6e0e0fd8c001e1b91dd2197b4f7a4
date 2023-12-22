@@ -1,0 +1,101 @@
+package pack;
+public class Ej1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] arr = {1, 2, 1, 4, 7, 6, 7, 8, 9, 10};
+		
+		System.out.println("VECTOR:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		
+		rotar(arr, 3);
+		
+		System.out.println("VECTOR ROTADO");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		
+		duplicados(arr);
+		
+		System.out.println("VECTOR SIN DUPLICADOS:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		int[]sub= {1,4,7};
+		subsecuencia(arr, sub);
+		
+		
+	}
+	
+	
+		static void rotar(int[]v,int nPosiciones) {
+			int aux[]=new int[v.length];
+			//lo copio
+			for(int i=v.length-1;i>=0;i--) {
+			aux[i]=v[i];
+			}
+			
+			for(int i=0;i<aux.length;i++) {
+				if(i+nPosiciones<=aux.length-1) {
+					v[i+nPosiciones]=aux[i];
+				}else {
+					v[(i+nPosiciones)%aux.length]=aux[i];
+		}
+	}
+}
+
+		
+	static int duplicados(int[]v) {
+		int numElimnados=0;
+		boolean repetido=false;
+		int aux[]=new int[v.length];
+		
+		int indAux=0;
+		for(int i=0;i<v.length;i++) {
+			for(int j=i+1;j<v.length-1;j++) {
+				if(v[i]==v[j]) {
+					repetido=true;
+				}else {
+					aux[indAux]=v[i];
+					indAux++;
+					numElimnados++;
+				}
+			}
+		}
+		
+		v=aux;
+		return numElimnados;
+	
+	}
+	
+	
+
+	
+	
+	
+	static boolean subsecuencia(int[] v, int[] secuencia) {
+    boolean repetido = false;
+
+    for (int i=0;i<= v.length-secuencia.length && !repetido; i++) {
+        if (v[i]==secuencia[0]) {
+            repetido=true;
+
+            for (int j=1; j<secuencia.length && repetido; j++) {
+                if (v[i + j]!=secuencia[j]) {
+                    repetido=false;
+                }
+            }
+        }
+    }
+
+   return repetido;
+}
+
+
+}

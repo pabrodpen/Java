@@ -1,0 +1,39 @@
+package pack;
+import java.util.Scanner;
+public class Ej1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Longitud:");
+		int n=sc.nextInt();
+		int[]arr=new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=(int)(Math.random()*10-1+1)+1;
+		}
+	}
+	
+	
+		static void rotar(int[]v,int nPosiciones) {
+			int aux[]=new int[v.length];
+			//lo copio
+			for(int i=v.length-1;i>=0;i--) {
+			aux[i]=v[i];
+			}
+			
+			for(int i=0;i<aux.length;i++) {
+				if(i+nPosiciones<=aux.length-1) {
+					v[i+nPosiciones]=aux[i];
+				}else {
+					v[(i+nPosiciones)%aux.length]=aux[i];
+		}
+	}
+}
+
+		
+	static void duplicados(int[]v) {
+		
+	}
+
+}
