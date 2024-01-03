@@ -11,14 +11,19 @@ public class Res4 {
 		String frase=scanner.nextLine();
 		int numEspacios=0;
 		
+		
 		for(int i=0;i<frase.length();i++) {
-			if(Character.isSpace(frase.charAt(i))) {
+			if(Character.isWhitespace(frase.charAt(i))) {
 				numEspacios++;
 			}
 		}
 		
 		System.out.println(frase);
 		System.out.println("Numero de espacios:"+numEspacios);
+		
+		
+		
+		
 		
 	}
 

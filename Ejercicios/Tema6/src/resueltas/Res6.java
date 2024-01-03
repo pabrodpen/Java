@@ -1,4 +1,5 @@
 package resueltas;
+import java.text.StringCharacterIterator;
 import java.util.Scanner;
 public class Res6 {
 
@@ -8,15 +9,18 @@ public class Res6 {
 		Scanner sc=new Scanner(System.in);
 		System.out.print("Nombre:");
 		String nombre=sc.nextLine();
+		String nueva="";
 		
 		String vocales="aeiouAEIOUáéíóúÁÉÍÓÚ";
 		
 		for(int i=0;i<nombre.length();i++) {
-			CharSequence c=nombre.charAt(i);
-			if(vocales.contains(c)) {
-				
+			String aux=String.valueOf(nombre.charAt(i));
+			if(!(vocales.contains(aux))) {
+				nueva+=nombre.charAt(i);
 			}
 		}
+		
+		System.out.println(nueva);
 		
 	}
 
