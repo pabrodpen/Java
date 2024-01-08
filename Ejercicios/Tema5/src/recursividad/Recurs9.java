@@ -6,7 +6,8 @@ public class Recurs9 {
 		// TODO Auto-generated method stub
 		
 		int[]arr= {2,3,5,7};
-		int resultados[]=maxYmin(arr, 0, 0, 0);
+		int resultados[]=maxYmin(arr, 0, 0, 10000);
+
 		int maximo=resultados[0];
 		int minimo=resultados[1];
 		
@@ -25,9 +26,15 @@ public class Recurs9 {
 				min=v[cont];
 			}
 			
-			maxYmin(v, cont+1, max, min);
+			//usamos maximosMinimos para guardar constantemente max y min
+			//ya que el metodo siempre nos devuelve 2 valores en cada recursion
+			
+			int[]maximosMinimos=maxYmin(v, cont+1, max, min);
+			max=maximosMinimos[0];
+			min=maximosMinimos[1];
 		}
 		
+		//usamos res para finalmente guardarlos
 		res[0]=max;
 		res[1]=min;
 		return res;

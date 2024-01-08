@@ -14,8 +14,9 @@ public class Recurs8 {
 	static int sumaVector(int[]v,int cont) {
 		int suma;
 		if(cont<v.length) {
-			suma+=v[cont];
-			sumaVector(v, cont+1);
+			suma=v[cont]+ sumaVector(v, cont+1);
+		}else {
+			suma=0;
 		}
 		
 		return suma;
