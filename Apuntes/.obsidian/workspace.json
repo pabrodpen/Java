@@ -1,0 +1,167 @@
+{
+  "main": {
+    "id": "23485aae50e4e689",
+    "type": "split",
+    "children": [
+      {
+        "id": "f0b030412d29c1e1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "756a6c183c113fa1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEMA 3-4.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "80bf83a836840c9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "STRINGS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2c82ca831ec67462",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ded779c76c2bddc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "005158301cbdccf1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2ac9c22ea230d3b8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "daf022c1c52b543c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1fbef15f2c7d5e59",
+    "type": "split",
+    "children": [
+      {
+        "id": "25d2088b836d8fdf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4750ff8954191ee7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "STRINGS.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3ec6172c2d7f682c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "STRINGS.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7b0a7b118ec05742",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "9e3c967d8c33ed39",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "STRINGS.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo canvas": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "80bf83a836840c9e",
+  "lastOpenFiles": [
+    "TEMA 3-4.md",
+    "STRINGS.md"
+  ]
+}
