@@ -2,14 +2,15 @@ package ejerciciosClase;
 import java.util.Scanner;
 public class SopaLetras {
 
+	static String[]palabras= {"pala","bar","roca"};
+	static String negritaInicio = "\u001B[1m";
+    static String negritaFin = "\u001B[0m";
+    static String SsubrayadoInicio = "\u001B[4m";
+    static String subrayadoFin = "\u001B[24m";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		  // Definir secuencias de escape ANSI para formato de texto
-        String negritaInicio = "\u001B[1m";
-        String negritaFin = "\u001B[0m";
-        String subrayadoInicio = "\u001B[4m";
-        String subrayadoFin = "\u001B[24m";
 
       
 		Scanner sc=new Scanner(System.in);
@@ -24,7 +25,7 @@ public class SopaLetras {
 		
 		
 		
-		String[]palabras= {"pala","bar","roca"};
+		
 		
 		//0-->ponemos la palabra en vertical
 		//1-->ponemos la palabra en horizontal
@@ -89,13 +90,33 @@ public class SopaLetras {
 		
 		
 		System.out.println("BIENVENIDO A LA SOPA DE LETRAS");
+		System.out.println("HAY "+palabras.length+" PALABRAS PARA ENCONTRAR");
 		System.out.println();
 		System.out.println();
 		
 		mostrar(tablero);
-		//boolean ganador=false;
 		
-		//while()
+		int aciertos=0;
+		
+		while(aciertos<palabras.length) {
+			System.out.print("Escribe una palabra:");
+			String pal=sc.nextLine();
+			
+			boolean encontrado=false;
+			for(int i=0;i<palabras.length && !encontrado;i++) {
+				if(pal.equals(palabras[i])) {
+					resaltarAcierto(tablero, pal);
+					aciertos++;
+					if(aciertos<palabras.length) {
+						System.out.println("SIGUE ASI!!!");
+						System.out.println("TE QUEDAN "+(palabras.length-aciertos)+" PALABRAS");
+					}
+					encontrado=true;
+				}
+			}
+		}
+		
+		System.out.println("HAS GANADO!!!");
 	}
 	
 	static void mostrar(char[][]t) {
@@ -106,5 +127,25 @@ public class SopaLetras {
 			System.out.println();
 		}
 	}
+	
+	static void resaltarAcierto(char[][]t,String p) {
+		String intento="";
+		boolean acertado=false;
+		
+			for(int i=0;i<t.length;i++) {
+				for(int j=0;j<t[i].length;j++) {
+						intento+=t[i][j];
+				}
+				if(p.equals(intento)) {
+					for(int j=0;j<t.length;j++) {
+						for(int k=0;k<t[i].length;k++) {
+								t[j][k]='✅';
+						}
+				}
+			}	
+		}
+		
+	}
+	
 
 }
