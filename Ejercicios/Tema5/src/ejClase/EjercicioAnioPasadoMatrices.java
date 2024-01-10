@@ -1,6 +1,6 @@
-package ejerciciosClase;
+package ejClase;
 import java.util.Scanner;
-public class EjercicioAnioPasado {
+public class EjercicioAnioPasadoMatrices {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
