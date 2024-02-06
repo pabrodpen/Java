@@ -30,11 +30,14 @@ public class Main {
 		cjto1.insertar(5);
 		cjto1.insertar(2);
 		cjto1.insertar(17);
+		System.out.println("CJTO1");
 		cjto1.mostrar();
 		
 		cjto2.insertar(17);
 		cjto2.insertar(28);
 		cjto2.insertar(5);
+		System.out.println("CJTO2");
+		cjto2.mostrar();
 		
 		//IMP COMO SE GUARDA LO QUE SE DEVUELVE DE UN METODO STATIC
 		Cjto cjtoUnion=Cjto.union(cjto1, cjto2);

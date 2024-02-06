@@ -96,7 +96,7 @@ public class Cjto {
 		Cjto resCjto=new Cjto();
 		
 		for(int i=0;i<cjto1.cjto.length;i++) {
-			if(cjto2.esRepetido(cjto1.cjto[i]) && resCjto.esRepetido(cjto1.cjto[i])) {//vemos si tmb lo hemos metido anteriormente
+			if(cjto2.esRepetido(cjto1.cjto[i]) && !resCjto.esRepetido(cjto1.cjto[i])) {//vemos si tmb lo hemos metido anteriormente
 				resCjto.insertar(cjto1.cjto[i]);
 			}
 		}
@@ -108,14 +108,14 @@ public class Cjto {
 		Cjto resCjto=new Cjto();
 		
 		for(int i=0;i<cjto1.cjto.length;i++) {
-			if(!cjto2.esRepetido(cjto1.cjto[i]) && resCjto.esRepetido(cjto1.cjto[i])) {
+			if(!cjto2.esRepetido(cjto1.cjto[i]) && !resCjto.esRepetido(cjto1.cjto[i])) {
 				resCjto.insertar(cjto1.cjto[i]);
 			}
 		}
 		
 		//lo mismo pero para el cjto2
 		for(int i=0;i<cjto2.cjto.length;i++) {
-			if(!cjto1.esRepetido(cjto2.cjto[i]) && resCjto.esRepetido(cjto2.cjto[i])) {
+			if(!cjto1.esRepetido(cjto2.cjto[i]) && !resCjto.esRepetido(cjto2.cjto[i])) {
 				resCjto.insertar(cjto2.cjto[i]);
 			}
 		}
