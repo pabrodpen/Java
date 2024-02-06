@@ -1,0 +1,34 @@
+package pack;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Ej4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Frase:");
+		String frase=sc.nextLine();
+
+		int nVeces=0;
+		
+		String[]aux1=frase.split(" ");
+		String[]aux2=frase.split(" ");
+		Arrays.sort(aux1);
+		
+		
+		
+			for(int i=0;i<aux1.length;i++) {
+				for(int j=0;j<aux2.length;j++) {
+					if(aux1[i].equals(aux2[j])) {
+						nVeces++;
+					}
+				}
+				System.out.println(aux1[i]+" aparece "+nVeces+" veces");
+				nVeces=0;
+			}
+		}
+	
+
+}

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Cola {
 
-	Integer[]cola=new Integer[0];
+Integer[]cola=new Integer[0];
 	
 	void encolar(Integer n) {
 		cola=Arrays.copyOf(cola, cola.length+1);
@@ -14,5 +14,9 @@ public class Cola {
 	void desencolar() {
 		System.arraycopy(cola, 1, cola, 0, cola.length-1);
 		cola=Arrays.copyOf(cola, cola.length-1);
+	}
+	
+	void mostrar() {
+		System.out.println(Arrays.toString(cola));
 	}
 }

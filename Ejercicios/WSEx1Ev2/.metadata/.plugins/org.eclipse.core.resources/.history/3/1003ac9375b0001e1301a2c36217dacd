@@ -1,0 +1,29 @@
+package pack;
+
+import java.util.Arrays;
+
+public class Ej1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[]v1= {1,5,3,8,2,7,4,3,5};
+		
+		ordenarParcial(v1, 3);
+		
+	}
+	
+	static void ordenarParcial(int[]v,int k) {
+		int[]ord=new int[k];
+		for(int i=0;i<v.length;i++) {
+			while(i<k) {
+				ord[i]=v[i];
+			}
+		}
+		
+		System.out.println(Arrays.toString(v));
+	}
+	
+	
+
+}

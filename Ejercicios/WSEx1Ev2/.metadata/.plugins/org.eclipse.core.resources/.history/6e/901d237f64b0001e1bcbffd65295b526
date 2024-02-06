@@ -1,0 +1,23 @@
+package pack;
+
+
+public class Ej3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String cadena1="hola";
+		String cadena2="123";
+		String nueva="";
+		int cont1=0,cont2=0,contFinal=0;
+		while(cont1<cadena1.length() && cont2<cadena2.length()) {
+			nueva+=cadena1.charAt(cont1)+cadena2.charAt(cont2);
+			contFinal=contFinal+2;
+			cont1++;
+			cont2++;
+		}
+		
+		System.out.println(nueva);
+	}
+
+}

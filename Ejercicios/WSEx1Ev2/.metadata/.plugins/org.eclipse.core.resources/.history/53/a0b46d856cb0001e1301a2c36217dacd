@@ -1,0 +1,23 @@
+package pack;
+
+public class Ej5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	}
+	
+	static int[][]generaArrayBiInt(int inf,int sup) {
+		int nFil=3,nCol=3;
+		int[][]mat=new int[nFil][nCol];
+		for(int i=0;i<nFil;i++) {
+			for(int j=0;j<nCol;j++) {
+				mat[i][j]=(int)(Math.random()*(sup-inf+1)-1);
+			}
+		}
+		
+		return mat;
+	}
+
+}

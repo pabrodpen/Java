@@ -1,0 +1,46 @@
+package pack;
+
+public class Ej5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[][]matriz=generaArrayBiInt(10, 20);
+		
+		for(int i=0;i<matriz.length;i++) {
+			for(int j=0;j<matriz[i].length;j++) {
+				System.out.print(matriz[i][j]+"|");
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	static int[][]generaArrayBiInt(int inf,int sup) {
+		int nFil=3,nCol=3;
+		int[][]mat=new int[nFil][nCol];
+		for(int i=0;i<nFil;i++) {
+			for(int j=0;j<nCol;j++) {
+				mat[i][j]=(int)(Math.random()*(sup-inf+1)+inf);
+			}
+		}
+		
+		return mat;
+	}
+	
+	static int[]filaDeArrayBiInt(int[][]matriz,int fila){
+		int[]arr=new int[matriz.length];
+		int cont=0;
+		for(int i=0;i<matriz.length;i++) {
+			for(int j=0;j<matriz[i].length;j++) {
+				if(i==fila) {
+					arr[cont]=matriz[i][j];
+					cont++;
+				}
+			}
+		}
+		return arr;
+		
+	}
+
+}
