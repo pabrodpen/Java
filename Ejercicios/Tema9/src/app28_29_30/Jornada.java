@@ -71,7 +71,7 @@ public class Jornada implements Comparable{
 
 
 	public int minTrabajados() {
-		return (int) horaSalida.until(horaEntrada, ChronoUnit.MINUTES);
+		return (int) horaEntrada.until(horaSalida, ChronoUnit.MINUTES);
 	}
 
 
