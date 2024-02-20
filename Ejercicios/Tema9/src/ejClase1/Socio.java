@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit;
 public class Socio implements Comparable{
 
 	static int contadorIds=1;
-	static DateTimeFormatter formatter=DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	static DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	
 	String nombre;
 	LocalDate fechaNac;
