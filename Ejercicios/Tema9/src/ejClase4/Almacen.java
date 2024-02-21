@@ -24,7 +24,7 @@ public class Almacen {
 	}
 	
 	public void elimArticulo(int pos) {
-		System.arraycopy(almacen, pos+1, almacen, pos, pos-1-almacen.length);
+		System.arraycopy(almacen, pos+1, almacen, pos, almacen.length-pos-1);
 		almacen=Arrays.copyOf(almacen, almacen.length-1);
 			
 	}
@@ -54,6 +54,8 @@ public class Almacen {
 					encontrado=true;
 				}
 			}
+			System.out.println("Articulo modificado");
+
 		}else {
 			System.out.println("No se ha encontrado el articulo");
 		}

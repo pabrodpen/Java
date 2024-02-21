@@ -66,6 +66,24 @@ public class Main {
 				}
 				break;
 			case 4:
+				System.out.print("Codigo del articulo que quieres modificar:");
+				c=scanner.nextInt();
+				
+				pos=almacen.buscarArticulo(c);
+				if(pos>=0) {
+					System.out.print("Nueva descripcion del articulo:");
+					 deString=scanner.next();
+					System.out.print("Nuevo numero de unidades del articulo:");
+					 st=scanner.nextInt();
+					System.out.print("Nuevo precio de compra:");
+					 pComp=scanner.nextDouble();
+					System.out.print("Nuevo precio de venta:");
+					 pVent=scanner.nextDouble();
+					 
+					almacen.modArticulo(pos, deString, st, pComp, pVent);
+				}else {
+					System.out.println("El articulo no existe");
+				}
 				break;
 			case 5:
 				System.out.print("Codigo del articulo:");
@@ -74,10 +92,30 @@ public class Main {
 				if(pos>=0) {
 					System.out.print("Incremento del stock:");
 					int incr=scanner.nextInt();
-					almacen.entradaMercancia(articulo, c);
+					
+					for(int i=0;i<almacen.almacen.length;i++) {
+						if(pos==i) {
+							articulo=almacen.almacen[i];
+							almacen.entradaMercancia(articulo, incr);
+						}
+					}
 				}
 				break;
 			case 6:
+				System.out.print("Codigo del articulo:");
+				c=scanner.nextInt();
+				pos=almacen.buscarArticulo(c);
+				if(pos>=0) {
+					System.out.print("Decremento del stock:");
+					int decr=scanner.nextInt();
+					
+					for(int i=0;i<almacen.almacen.length;i++) {
+						if(pos==i) {
+							articulo=almacen.almacen[i];
+							almacen.salidaMercancia(articulo, decr);
+						}
+					}
+				}
 				break;
 				
 			}
