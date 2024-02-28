@@ -12,7 +12,11 @@ public abstract class FiguraGeometrica implements Imprimible,ComparadorArea{
 
 	public FiguraGeometrica(String color) {
 		super();
-		this.color = "verde";
+		if(color==null) {
+			this.color = "verde";
+		}else {
+			this.color=color;
+		}
 	}
 
 	public FiguraGeometrica() {

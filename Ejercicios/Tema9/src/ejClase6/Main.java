@@ -4,14 +4,20 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		FiguraGeometrica c1 = new Circulo(23,"rojo");
+		FiguraGeometrica f1 = new Circulo(23,"rojo");
 		
-		FiguraGeometrica c2 = new Circulo(33);
+		FiguraGeometrica f2 = new Rectangulo(null,13,3);
 		
-		c1.imprimir();
-		c2.imprimir();
+		FiguraGeometrica f3=new Triangulo("azul",1,6);
 		
-		c1.comparaAreas(c1,c2);
+		
+		f1.imprimir();
+		
+		f2.imprimir();
+		
+		f3.imprimir();
+		
+		f1.comparaAreas(f2, f3);
 		
 		
 	}

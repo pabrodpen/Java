@@ -1,34 +1,14 @@
 package ejClase6;
 
-public class Circulo extends FiguraGeometrica {
+public class Circulo extends FiguraGeometrica implements Imprimible,ComparadorArea {
 	double radio;
 	final double PI=Math.PI;
 	
-	
-	
-
-	
-	
-	
-
-
-
-
-
-	public Circulo(double radio) {
-		this.radio = radio;
-	}
-
-
 
 	public Circulo(double radio,String color) {
 		super(color);
 		this.radio = radio;
 	}
-
-
-
-
 
 
 
@@ -39,42 +19,25 @@ public class Circulo extends FiguraGeometrica {
 	}
 
 	
-
-
-
 	@Override
-	public String toString() {
-		return "Circulo [radio=" + radio + ", color=" + color + "]";
+	public void imprimir() {
+		System.out.println("Circulo: radio="+radio+", color="+color);
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	@Override
 	public void comparaAreas(FiguraGeometrica f1, FiguraGeometrica f2) {
-		// TODO Auto-generated method stub
-		Circulo circulo1=(Circulo) f1;
-		Circulo circulo2=(Circulo) f2;
-		if(f1.calcularArea()-f2.calcularArea()>0) {
-			System.out.println("la primera figura es mayor");
-		}else if(f1.calcularArea()-f2.calcularArea()<0) {
-			System.out.println("la segunda figura es mayor");
+	    double area1 = f1.calcularArea();
+	    double area2 = f2.calcularArea();
 
-		}else {
-			System.out.println("son iguales");
-
-		}
-		
+	    if (area1 > area2) {
+	        System.out.println("La primera figura es mayor");
+	    } else if (area1 < area2) {
+	        System.out.println("La segunda figura es mayor");
+	    } else {
+	        System.out.println("Las figuras tienen el mismo área");
+	    }
 	}
+
 
 }

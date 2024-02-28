@@ -3,6 +3,15 @@ package ejClase6;
 public class Rectangulo extends FiguraGeometrica implements Imprimible,ComparadorArea{
 
 	double base,altura;
+	
+	
+	
+	
+	public Rectangulo(String color, double base, double altura) {
+		super(color);
+		this.base = base;
+		this.altura = altura;
+	}
 	@Override
 	public double calcularArea() {
 		// TODO Auto-generated method stub
@@ -10,19 +19,22 @@ public class Rectangulo extends FiguraGeometrica implements Imprimible,Comparado
 	}
 	@Override
 	public void comparaAreas(FiguraGeometrica f1, FiguraGeometrica f2) {
-		// TODO Auto-generated method stub
-				Rectangulo rectangulo1=(Rectangulo) f1;
-				Rectangulo rectangulo2=(Rectangulo) f2;
-				if(f1.calcularArea()-f2.calcularArea()>0) {
-					System.out.println("la primera figura es mayor");
-				}else if(f1.calcularArea()-f2.calcularArea()<0) {
-					System.out.println("la segunda figura es mayor");
+	    double area1 = f1.calcularArea();
+	    double area2 = f2.calcularArea();
 
-				}else {
-					System.out.println("son iguales");
+	    if (area1 > area2) {
+	        System.out.println("La primera figura es mayor");
+	    } else if (area1 < area2) {
+	        System.out.println("La segunda figura es mayor");
+	    } else {
+	        System.out.println("Las figuras tienen el mismo área");
+	    }
+	}
 
-				}
-		
+	
+	@Override
+	public void imprimir() {
+		System.out.println("Rectangulo: base="+base+", altura="+altura+", color="+color);
 	}
 
 }
