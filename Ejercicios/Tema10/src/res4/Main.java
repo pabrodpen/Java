@@ -16,7 +16,8 @@ public class Main {
 			fileReader=new FileReader("src/res4/numeros.txt");
 			int c=fileReader.read();
 			while(c!=-1) {
-				numString+=String.valueOf(c);
+				//REVISAR XQ SE USA EL CASTING DE CHAR
+				numString+=(char)c;
 				c=fileReader.read();
 			}
 			
@@ -25,7 +26,7 @@ public class Main {
 				int n=Integer.parseInt(aux[i]);
 				suma+=n;
 			}
-			double media=(double)(suma/aux.length);
+			double media=(double)suma/aux.length;
 			System.out.println("Suma:"+suma);
 			System.out.println("Media:"+media);
 			
