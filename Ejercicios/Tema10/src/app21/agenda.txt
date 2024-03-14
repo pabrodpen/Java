@@ -1,0 +1,3 @@
+Nombre:pablo, telefono:123
+Nombre:irene, telefono:456
+Nombre:paco, telefono:888
