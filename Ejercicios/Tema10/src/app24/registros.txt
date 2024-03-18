@@ -1,0 +1,3 @@
+Fecha		Temperatura maxima		Temperatura minima
+12-12-2020		23.0		12.0
+23-11-2005		34.0		15.0
