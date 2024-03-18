@@ -1,0 +1,15 @@
+public class Main {
+
+    public static void main(String[] args) {
+        // Imprime un mensaje de saludo
+        System.out.println("Hola, mundo!");
+
+        /*
+         * Este es un bloque de comentarios
+         * que abarca varias líneas.
+         * Se utiliza para proporcionar una descripción detallada
+         * del código o explicar su funcionamiento.
+         */
+        System.out.println("Este es un ejemplo de comentarios en Java");
+    }
+}

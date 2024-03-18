@@ -21,6 +21,13 @@ public class Cliente {
 	public String toString() {
 		return "Cliente [dni=" + dni + ", nombre=" + nombre + ", fechaNac=" + fechaNac + ", saldo=" + saldo + "]";
 	}
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	
 	
 	
 }

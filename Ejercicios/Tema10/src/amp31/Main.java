@@ -56,7 +56,8 @@ public class Main {
 			System.out.println("1.Alta cliente");
 			System.out.println("2.Baja cliente");
 			System.out.println("3.Listar clientes");
-			System.out.println("4.Salir");
+			System.out.println("4.Modificar saldo");
+			System.out.println("5.Salir");
 			System.out.print("Dime una opcion:");
 			opcion=scanner.nextInt();
 			
@@ -79,7 +80,7 @@ public class Main {
 				dni=scanner.next();
 				
 			}
-		} while (opcion!=4);
+		} while (opcion!=5);
 	}
 
 }
