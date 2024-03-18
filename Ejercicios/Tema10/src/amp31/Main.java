@@ -16,41 +16,36 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		Scanner scanner=new Scanner(System.in);
-		Cliente[]clientes=new Cliente[0];
+		ConjClientes conjClientes=new ConjClientes();
 		Cliente cliente;
 		int opcion=0;
-		
+		DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+		//imp hacer la leida de datos del principio (del tyxt al array) antes del do-while
+		try {
+			BufferedReader in=new BufferedReader(new FileReader("src/amp31/clientes.txt"));
+			String linea;
+			//nos saltamos el encabezado
+			in.readLine();
+			while((linea=in.readLine())!=null) {
+				String[]aux=linea.split("\t");
+				String dni=aux[0];
+				String nombre=aux[1];
+				
+	            String fechaString=aux[2];
+				double saldo=Double.parseDouble(aux[3]);
+				
+				cliente=new Cliente(dni, nombre, fechaString, saldo);
+				conjClientes.addCliente(cliente);
+			}
+			
+		} catch (IOException e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
 		do {
 			
-			try {
-				BufferedWriter out=new BufferedWriter(new FileWriter("src/amp31/clientes.txt"));
-				out.write("DNI\tNombre\tFecha de nacimiento\tSaldo");
-				out.newLine();
-				out.close();
-			} catch (IOException e) {
-				// TODO: handle exception
-				System.out.println(e.getMessage());
-			}
 			
-			try {
-				BufferedReader in=new BufferedReader(new FileReader("src/amp31/clientes.txt"));
-				String linea;
-				while((linea=in.readLine())!=null) {
-					String[]aux=linea.split("\t");
-					String dni=aux[0];
-					String nombre=aux[1];
-					String fechaString=aux[2];
-					double saldo=Double.parseDouble(aux[3]);
-					
-					cliente=new Cliente(dni, nombre, fechaString, saldo);
-					clientes=Arrays.copyOf(clientes, clientes.length+1);
-					clientes[clientes.length-1]=cliente;
-				}
-				
-			} catch (IOException e) {
-				// TODO: handle exception
-				System.out.println(e.getMessage());
-			}
 			
 			System.out.println("MENU DE GESTION DEL BANCO");
 			System.out.println("1.Alta cliente");
@@ -73,12 +68,60 @@ public class Main {
 				double saldo=scanner.nextDouble();
 				
 				cliente=new Cliente(dni, nombre, fecha, saldo);
-				clientes[clientes.length-1]=cliente;
+				conjClientes.addCliente(cliente);
 				break;
 			case 2:
 				System.out.print("DNI del cliente que quieres eliminar:");
 				dni=scanner.next();
 				
+				if(conjClientes.buscarCliente(dni)>=0) {
+					conjClientes.rmCliente(dni);
+					System.out.println("Cliente eliminado");
+				}else {
+					System.out.println("Cliente no encontrado");
+				}
+				break;
+			
+			case 3:
+				System.out.println("CLIENTES DEL BANCO");
+				System.out.println(conjClientes.toString());
+				break;
+			
+			case 4:
+				System.out.print("DNI del cliente");
+				dni=scanner.next();
+				int posCliente=conjClientes.buscarCliente(dni);
+				if(posCliente>=0) {
+					System.out.print("Nuevo saldo:");
+					double nuevoSaldo=scanner.nextDouble();
+					
+					conjClientes.conjClientes[posCliente].setSaldo(nuevoSaldo);
+						
+					
+				}else {
+					System.out.println("Cliente no encontrado");
+				}
+				break;
+				
+			case 5:
+				try {
+					BufferedWriter out=new BufferedWriter(new FileWriter("src/amp31/clientes.txt"));
+					out.write("DNI\tNombre\tFecha nac\tSaldo");
+					out.newLine();
+					
+					for(int i=0;i<conjClientes.conjClientes.length;i++) {
+						cliente=conjClientes.conjClientes[i];
+						out.write(String.valueOf(cliente.getDni()+"\t"+cliente.getNombre()+"\t"+cliente.getFechaNac().format(formatter)+"\t"+cliente.getSaldo()));
+						out.newLine();
+					}
+					out.close();
+					System.out.println("DATOS GUARDADOS");
+				} catch (IOException e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
+				
+				break;
 			}
 		} while (opcion!=5);
 	}
