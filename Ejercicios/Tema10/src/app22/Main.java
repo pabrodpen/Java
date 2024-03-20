@@ -50,3 +50,42 @@ public class Main {
 	}
 
 }
+
+
+/*
+ * HACIENDOLO CON SCANNER
+ * 
+ * try {
+            Scanner scanner = new Scanner(new File("src/app22/deportistas.txt"));
+            scanner.nextLine(); // pasamos a la segunda línea, ya que en la primera solo están los nombres de los datos
+            while (scanner.hasNextLine()) {
+                String linea = scanner.nextLine();
+                Scanner lineaScanner = new Scanner(linea).useDelimiter("\t+");
+                String nombre = lineaScanner.next();
+                int edad = lineaScanner.nextInt();
+                double peso = lineaScanner.nextDouble();
+                double altura = lineaScanner.nextDouble();
+                System.out.println(nombre + ", " + edad + ", " + peso + ", " + altura);
+                sumaEdad += edad;
+                sumaEstatura += altura;
+                sumaPeso += peso;
+                numDeportistas++;
+                lineaScanner.close(); // Cerramos el Scanner de la línea para liberar recursos
+            }
+
+            mediaEdad = (double) sumaEdad / numDeportistas;
+            mediaEstatura = (double) sumaEstatura / numDeportistas;
+            mediaPeso = (double) sumaPeso / numDeportistas;
+
+            System.out.println("Media de edad: " + mediaEdad);
+            System.out.println("Media de estatura: " + mediaEstatura);
+            System.out.println("Media de peso: " + mediaPeso);
+
+            scanner.close(); // Cerramos el Scanner principal
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo no encontrado: " + e.getMessage());
+        }
+    }
+ * 
+ * 
+ * */
