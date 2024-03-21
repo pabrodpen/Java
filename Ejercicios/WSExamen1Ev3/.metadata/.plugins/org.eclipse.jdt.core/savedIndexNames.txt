@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/home/usuario/Escritorio/WSExamen1Ev3/.metadata/.plugins/org.eclipse.jdt.core
+3815973452.index
+1865797976.index
+3898341475.index

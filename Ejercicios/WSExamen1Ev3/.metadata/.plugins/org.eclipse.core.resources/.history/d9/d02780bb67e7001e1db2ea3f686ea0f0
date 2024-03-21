@@ -1,0 +1,13 @@
+package pack;
+
+import java.util.Arrays;
+
+public class ConjEmpleados {
+
+	Empleado[] cjtoEmpleados=new Empleado[0];
+	
+	public void addEmpleado(Empleado e) {
+		cjtoEmpleados=Arrays.copyOf(cjtoEmpleados, cjtoEmpleados.length+1);
+		cjtoEmpleados[cjtoEmpleados.length-1]=e;
+	}
+}

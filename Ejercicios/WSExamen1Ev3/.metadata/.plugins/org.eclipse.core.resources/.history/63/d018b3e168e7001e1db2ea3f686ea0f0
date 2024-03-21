@@ -1,0 +1,45 @@
+package pack;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Empleado {
+
+	String nombre;
+	LocalDate fecha;
+	double salario;
+	DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	public Empleado(String nombre, String fecha, double salario) {
+		super();
+		this.nombre = nombre;
+		this.fecha = LocalDate.parse(fecha,formatter);
+		this.salario = salario;
+	}
+	@Override
+	public String toString() {
+		return "Empleado [nombre=" + nombre + ", fecha=" + fecha + ", salario=" + salario + "]";
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public LocalDate getFecha() {
+		return fecha;
+	}
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
+	}
+	public double getSalario() {
+		return salario;
+	}
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+	
+	public int edad() {
+		return (int) fechaNac.until(LocalDate.now(),ChronoUnit.YEARS);
+	}
+	
+}
