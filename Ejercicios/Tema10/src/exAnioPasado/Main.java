@@ -134,38 +134,48 @@ public class Main {
 				System.out.print("Precio de la reparacion");
 				double precio=scanner.nextDouble();
 				
-				reparacion=new Reparacion(matricula, descripcion, precio);
-				if(conjReparaciones.buscarReparacion(reparacion.getCod())<0) {
+				if(conjReparaciones.buscarReparacion(matricula,descripcion,precio)<0) {
+					reparacion=new Reparacion(matricula, descripcion, precio);
 					conjReparaciones.addReparacion(reparacion);
 				}
 				
 				break;
 				
 			case 2:
-				System.out.print("Codigo de la reparacion:");
-				int c=scanner.nextInt();
+				System.out.print("Matricula del coche:");
+				 matricula=scanner.next();
+				System.out.print("Descripcion de la reparacion:");
+				 descripcion=scanner.next();
+				System.out.print("Precio de la reparacion");
+				 precio=scanner.nextDouble();
 				
-				if(conjReparaciones.buscarReparacion(c)>=0) {
-					conjReparaciones.rmReparacion(c);
+				 if(conjReparaciones.buscarReparacion(matricula,descripcion,precio)<0) {
+						int pos=conjReparaciones.buscarReparacion(matricula,descripcion,precio);
+						conjReparaciones.rmReparacion(pos);
 				}else {
 					System.out.println("La reparacion no existe");
 				}
 				break;
 				
 			case 3:
-				System.out.print("Codigo de la reparacion:");
-				c=scanner.nextInt();
+				System.out.print("Matricula del coche:");
+				 matricula=scanner.next();
+				System.out.print("Descripcion de la reparacion:");
+				 descripcion=scanner.next();
+				 scanner.nextLine();
+				System.out.print("Precio de la reparacion");
+				 precio=scanner.nextDouble();
 				
-				if(conjReparaciones.buscarReparacion(c)>=0) {
-					System.out.print("Nuevo precio de la reparacion:");
-					double nuevoPrecio=scanner.nextDouble();
-					
-					conjReparaciones.reparaciones[c].setPrecio(nuevoPrecio);
-					System.out.println("Precio cambiado");
-				}else {
-					System.out.println("La reparacion no existe");
-				}
-				break;
+				 int pos = conjReparaciones.buscarReparacion(matricula, descripcion, precio);
+				    if (pos >= 0) {
+				        System.out.print("Nuevo precio de la reparacion:");
+				        double nuevoPrecio = scanner.nextDouble();
+				        conjReparaciones.reparaciones[pos].setPrecio(nuevoPrecio);
+				        System.out.println("Precio cambiado");
+				    } else {
+				        System.out.println("La reparacion no existe");
+				    }
+				    break;
 				
 			case 4:
 				System.out.println("LISTADO DE REPARACIONES ORDENADO POR MATRICULA");
@@ -176,8 +186,6 @@ public class Main {
 			case 5:
 				try {
 					BufferedWriter out=new BufferedWriter(new FileWriter("src/exAnioPasado/conjTalleres.txt"));
-					out.write("LISTADO DE REPARACIONES");
-					out.newLine();
 					for(int i=0;i<conjReparaciones.reparaciones.length;i++) {
 						reparacion=conjReparaciones.reparaciones[i];
 						out.write(reparacion.getMatricula());
@@ -187,6 +195,7 @@ public class Main {
 						out.write(String.valueOf(reparacion.getPrecio()));
 						out.newLine();
 					}
+					out.close();
 				} catch (IOException e) {
 					// TODO: handle exception
 					System.out.println(e.getMessage());

@@ -8,7 +8,6 @@ public class ConjReparaciones {
 	
 	public void addReparacion(Reparacion r) {
 		if(buscarReparacion(r.getMatricula(),r.getDescripcion(),r.getPrecio())>=0) {
-			System.out.println("La matricula ya esta en el sistema");
 		}else {
 			reparaciones=Arrays.copyOf(reparaciones, reparaciones.length+1);
 			reparaciones[reparaciones.length-1]=r;
