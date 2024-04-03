@@ -1,8 +1,9 @@
 package res9;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class ConjRegistros {
+public class ConjRegistros implements Serializable{
 
 	Registro[]conjRegistros=new Registro[0];
 	
