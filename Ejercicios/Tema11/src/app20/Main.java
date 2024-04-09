@@ -1,5 +1,10 @@
 package app20;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -13,6 +18,15 @@ public class Main {
 		
 		ConjClientes conjClientes=new ConjClientes();
 		Cliente cliente;
+		
+		try {
+			ObjectInputStream in=new ObjectInputStream(new FileInputStream("src/app20/clientes.dat"));
+			
+			conjClientes=(ConjClientes) in.readObject();
+		} catch (IOException | ClassNotFoundException e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
 		
 		do {
 			System.out.println("1.ALTA CLIENTE");
@@ -68,6 +82,16 @@ public class Main {
 			break;
 			
 			case 5:
+				try {
+					ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream("src/app20/clientes.dat"));
+					
+				
+					out.writeObject(conjClientes);
+					out.close();
+				} catch (IOException e) {
+					// TODO: handle exception
+					System.out.println(e.getMessage());
+				}
 				
 			}
 		} while (opcion!=5);

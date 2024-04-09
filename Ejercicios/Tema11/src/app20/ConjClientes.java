@@ -1,8 +1,9 @@
 package app20;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class ConjClientes {
+public class ConjClientes implements Serializable{
 
 	Cliente[]clientes=new Cliente[0];
 	

@@ -1,8 +1,10 @@
 package app20;
 
-public class Cliente {
+import java.io.Serializable;
 
-	static int contId=0;
+public class Cliente implements Serializable{
+
+	static int contId=1;
 	int id;
 	String nombre;
 	int tfno;
