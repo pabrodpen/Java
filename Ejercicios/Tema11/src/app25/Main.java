@@ -28,13 +28,12 @@ public class Main {
 			 out4=new ObjectOutputStream(new FileOutputStream("src/app25/fich4.dat"));
 
 			out1.writeObject(l1);
-			out2.writeObject(l2);
-			out3.writeObject(l3);
-			out4.writeObject(l4);
-			
 			out1.close();
+			out2.writeObject(l2);
 			out2.close();
+			out3.writeObject(l3);
 			out3.close();
+			out4.writeObject(l4);
 			out4.close();
 			
 			Scanner scanner=new Scanner(System.in);
@@ -42,7 +41,7 @@ public class Main {
 			
 			
 			System.out.print("Dime un numero:");
-			Integer n=scanner.nextInt();
+			int n=scanner.nextInt();
 			
 			
 			Integer[]listaNum1,listaNum2,listaNum3,listaNum4;
@@ -63,35 +62,51 @@ public class Main {
 			int numFich=1,pos=0;
 			
 			for(int i=0;i<listaNum1.length && !encontrado;i++) {
-				if(listaNum1[i]==n) {
+				if(listaNum1[i].intValue()==n) {
 					encontrado=true;
 					pos=i;
 				}
 			}
 			
-			numFich++;
-			for(int i=0;i<listaNum2.length && !encontrado;i++) {
-				if(listaNum2[i]==n) {
-					encontrado=true;
-					pos=i;
+			if(!encontrado) {
+				numFich++;
+				for(int i=0;i<listaNum2.length && !encontrado;i++) {
+					if(listaNum2[i].intValue()==n) {
+						encontrado=true;
+						pos=i;
+					}
+				}
+				
+				if(!encontrado) {
+					numFich++;
+					for(int i=0;i<listaNum3.length && !encontrado;i++) {
+						if(listaNum3[i].intValue()==n) {
+							encontrado=true;
+							pos=i;
+						}
+					}
+					
+				}
+				
+				
+				if(!encontrado) {
+					numFich++;
+					
+					for(int i=0;i<listaNum4.length && !encontrado;i++) {
+						if(listaNum4[i].intValue()==n) {
+							encontrado=true;
+							pos=i;
+						}
+					}
 				}
 			}
 			
-			numFich++;
-			for(int i=0;i<listaNum3.length && !encontrado;i++) {
-				if(listaNum3[i]==n) {
-					encontrado=true;
-					pos=i;
-				}
-			}
 			
-			numFich++;
-			for(int i=0;i<listaNum4.length && !encontrado;i++) {
-				if(listaNum4[i]==n) {
-					encontrado=true;
-					pos=i;
-				}
-			}
+			
+			
+			
+			
+			
 			
 			if(encontrado) {
 				System.out.println(n+" encontrado en el fichero fich"+numFich+" en la posicion "+pos);
