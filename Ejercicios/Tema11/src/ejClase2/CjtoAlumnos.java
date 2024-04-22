@@ -18,17 +18,17 @@ Cuando se encuentra la posición adecuada para el nuevo alumno, se inserta en el
  y se incrementa el contador cont.
 		 * 
 		 * */
-		   if (cont > 29) {
-	            System.out.println("Clase llena");
-	        } else {
-	            int i = cont - 1;
-	            while (i >= 0 && alumno.getDni().compareTo(cjtoAlumnos[i].getDni()) < 0) {
-	                cjtoAlumnos[i + 1] = cjtoAlumnos[i];
-	                i--;
-	            }
-	            cjtoAlumnos[i + 1] = alumno;
-	            cont++;
+		if (cont > 29) {
+	        System.out.println("Clase llena");
+	    } else {
+	        int i = cont - 1;
+	        while (i >= 0 && alumno.getDni().compareTo(cjtoAlumnos[i].getDni()) < 0) {
+	            cjtoAlumnos[i + 1] = cjtoAlumnos[i];
+	            i--;
 	        }
+	        cjtoAlumnos[i + 1] = alumno;
+	        cont++;
+	    }
 	}
 	
 	public void rmAlumno(int pos) {
@@ -50,10 +50,19 @@ Cuando se encuentra la posición adecuada para el nuevo alumno, se inserta en el
 	}
 	
 	
-	public void listar() {
+	public void listarPorNombre() {
+		Arrays.sort(cjtoAlumnos,0,cont);
 		for(int i=0;i<cont;i++) {
 			System.out.println(cjtoAlumnos[i]);
 		}
+	}
+	
+	public void listarPorNotaMedia() {
+		Arrays.sort(cjtoAlumnos, 0,cont,new OrdenaNotaMedia());
+		for(int i=0;i<cont;i++) {
+			System.out.println(cjtoAlumnos[i]);
+		}	
+		
 	}
 
 }
