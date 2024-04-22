@@ -1,0 +1,21 @@
+123456789A;Juan;Perez;Calle Mayor 123;Base de datos;8;7;9
+123456789A;Juan;Perez;Calle Mayor 123;Programacion;6;8;7
+123456789A;Juan;Perez;Calle Mayor 123;Entornos;7;6;8
+987654321B;Maria;Garcia;Avenida Libertad 456;Base de datos;6;7;8
+987654321B;Maria;Garcia;Avenida Libertad 456;Programacion;8;9;7
+987654321B;Maria;Garcia;Avenida Libertad 456;Entornos;7;8;6
+456789123C;Luis;Martinez;Calle Sol 789;Base de datos;9;8;7
+456789123C;Luis;Martinez;Calle Sol 789;Programacion;7;6;8
+456789123C;Luis;Martinez;Calle Sol 789;Entornos;8;7;9
+789123456D;Ana;Sanchez;Avenida Europa 234;Base de datos;7;8;6
+789123456D;Ana;Sanchez;Avenida Europa 234;Programacion;6;7;9
+789123456D;Ana;Sanchez;Avenida Europa 234;Entornos;8;9;7
+321654987E;Carlos;Lopez;Calle Mayor 123;Base de datos;5;6;7
+321654987E;Carlos;Lopez;Calle Mayor 123;Programacion;6;8;9
+321654987E;Carlos;Lopez;Calle Mayor 123;Entornos;7;7;8
+654987321F;Laura;Fernandez;Plaza España 567;Base de datos;8;9;7
+654987321F;Laura;Fernandez;Plaza España 567;Programacion;9;8;7
+654987321F;Laura;Fernandez;Plaza España 567;Entornos;7;8;9
+987321654G;David;Gomez;Avenida Central 890;Base de datos;7;8;9
+987321654G;David;Gomez;Avenida Central 890;Programacion;8;7;6
+987321654G;David;Gomez;Avenida Central 890;Entornos;9;8;7

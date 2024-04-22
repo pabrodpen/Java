@@ -58,11 +58,47 @@ Cuando se encuentra la posición adecuada para el nuevo alumno, se inserta en el
 	}
 	
 	public void listarPorNotaMedia() {
-		Arrays.sort(cjtoAlumnos, 0,cont,new OrdenaNotaMedia());
+		Arrays.sort(cjtoAlumnos, 0,cont,new ComparaNotaMedia());
 		for(int i=0;i<cont;i++) {
 			System.out.println(cjtoAlumnos[i]);
 		}	
 		
+	}
+	
+	public void notaMediaFinal() {
+		double mediaFinal;
+		double mediaAlumno=0;
+		
+		for(int i=0;i<cont;i++) {
+			if(cjtoAlumnos[i] !=null) {
+				mediaAlumno+=cjtoAlumnos[i].notaMedia();
+			}
+		}
+		
+		mediaFinal=mediaAlumno/cont;
+		
+		
+		System.out.println("Media final:"+mediaFinal);
+	}
+	
+	public void maxYMinNotas() {
+		Alumno alumMaxNot=null,alumMinNot=null;
+		double max=-1,min=Integer.MAX_VALUE;
+		
+		for(int i=0;i<cont;i++) {
+			if(cjtoAlumnos[i].notaMedia()>max) {
+				alumMaxNot=cjtoAlumnos[i];
+				max=cjtoAlumnos[i].notaMedia();
+			}
+			if(cjtoAlumnos[i].notaMedia()<min) {
+				alumMinNot=cjtoAlumnos[i];
+				min=cjtoAlumnos[i].notaMedia();
+			}
+		}
+		
+		
+		System.out.println("Alumno con mayor calificacion:"+alumMaxNot.getNombre()+" "+alumMaxNot.getApellidos());
+		System.out.println("Alumno con menor calificacion:"+alumMinNot.getNombre()+" "+alumMinNot.getApellidos());
 	}
 
 }

@@ -32,7 +32,7 @@ public class Main {
 				System.out.print("DNI:");
 				String dni=sc.next();
 				System.out.print("Nombre:");
-				String nombre=sc.nextLine();
+				String nombre=sc.next();
 				sc.nextLine();
 				System.out.print("Apellidos:");
 				String apellidos=sc.nextLine();
@@ -75,17 +75,7 @@ public class Main {
 				break;
 				
 			case 3:
-				double mediaFinal;
-				double mediaAlumno=0;
-				
-				for(int i=0;i<cjtoAlumnos.cjtoAlumnos.length;i++) {
-					mediaAlumno+=cjtoAlumnos.cjtoAlumnos[i].notaMedia();
-				}
-				
-				mediaFinal=mediaAlumno/cjtoAlumnos.cjtoAlumnos.length;
-				
-				
-				System.out.println("Media final:"+mediaFinal);
+				cjtoAlumnos.notaMediaFinal();
 				break;
 				
 			case 4:
@@ -102,21 +92,7 @@ public class Main {
 				break;
 				
 			case 5:
-				Alumno alumMaxNot=null,alumMinNot=null;
-				double max=-1,min=Integer.MAX_VALUE;
-				
-				for(int i=0;i<cjtoAlumnos.cjtoAlumnos.length;i++) {
-					if(cjtoAlumnos.cjtoAlumnos[i].notaMedia()>max) {
-						alumMaxNot=cjtoAlumnos.cjtoAlumnos[i];
-					}
-					if(cjtoAlumnos.cjtoAlumnos[i].notaMedia()<min) {
-						alumMaxNot=cjtoAlumnos.cjtoAlumnos[i];
-					}
-				}
-				
-				
-				System.out.println("Alumno con mayor calificacion:"+alumMaxNot.getNombre()+" "+alumMaxNot.getApellidos());
-				System.out.println("Alumno con menor calificacion:"+alumMinNot.getNombre()+" "+alumMinNot.getApellidos());
+				cjtoAlumnos.maxYMinNotas();
 				break;
 				
 			case 6:
