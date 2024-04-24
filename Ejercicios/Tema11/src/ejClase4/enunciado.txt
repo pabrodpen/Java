@@ -1,0 +1,19 @@
+
+Desarrolla un sistema de gestión de empleados que permita almacenar información 
+sobre los empleados de una empresa. Cada empleado tiene los siguientes datos:
+ nombre, apellido, edad, cargo y salario. Además, cada empleado puede estar 
+ asignado a uno o más proyectos, donde se almacena información adicional 
+ como el nombre del proyecto y la fecha de inicio. 
+ 
+ El sistema debe permitir realizar las siguientes operaciones:
+
+Agregar empleado: El usuario puede ingresar los datos de un nuevo empleado y asignarlo 
+a uno o más proyectos.
+
+Mostrar empleados por proyecto: El sistema debe mostrar un listado con todos los 
+empleados asignados a un proyecto específico, incluyendo su nombre completo, edad, 
+cargo y salario.
+
+Guardar y cargar datos: El sistema debe permitir guardar la información de los 
+empleados y los proyectos en archivos binarios para su persistencia. También debe 
+ser capaz de cargar los datos desde dichos archivos al iniciar el programa.

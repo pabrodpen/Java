@@ -1,6 +1,8 @@
 package ejClase3;
 
-public class ParAsignNot{
+import java.io.Serializable;
+
+public class ParAsignNot implements Serializable{
 
     Integer[] asignYnotas=new Integer[4];
 

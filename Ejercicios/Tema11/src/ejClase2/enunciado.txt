@@ -1,0 +1,13 @@
+ Un profesor tiene 30 estudiantes (dni, nombre y apellidos) y cada estudiante tiene tres
+calificaciones correspondientes a tres parciales y una nota media final (será un dato calculado).
+Almacenar los datos en un archivo ordenado por el campo dni. Incluir un menú de opciones,
+para añadir más estudiantes, visualizar datos de un estudiante pudiendo modificar sus notas y
+calcular nota final. Habrá un menú con las siguientes opciones:
+1.- Añadir nuevo alumno (mantener el orden según el dni)
+2.- Modificar notas alumno
+3.- Calcular nota media final
+4.- Consultar notas de un alumno
+5.- Mostrar el alumno con mayor y menor calificación
+6.- Listar los nombres de los alumnos y las notas medias, ordenado por nombre.
+7.- Listar los nombres de los alumnos y las notas medias, ordenado por nota media.
+8.- Salir

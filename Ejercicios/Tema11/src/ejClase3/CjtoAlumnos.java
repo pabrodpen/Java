@@ -1,11 +1,14 @@
 package ejClase3;
 
-public class CjtoAlumnos{
+import java.io.Serializable;
+import java.util.Arrays;
+
+public class CjtoAlumnos implements Serializable{
 
     Alumno[]alumnos=new Alumno[0];
 
-    public CjtoAlumnos(Alumno[] alumnos) {
-        this.alumnos = alumnos;
+    public CjtoAlumnos() {
+       
     }
 
     public void addAlumno(Alumno alumno){

@@ -1,0 +1,69 @@
+Ana Martínez
+29
+Desarrollador
+2500
+Proyecto de desarrollo web
+Proyecto de gestión de bases de datos
+------------------------
+Carlos Gómez
+36
+Gerente de ventas
+3000
+Proyecto de expansión internacional
+Proyecto de marketing digital
+Proyecto de análisis de mercado
+------------------------
+Laura Sánchez
+25
+Diseñadora gráfica
+2000
+Proyecto de identidad corporativa
+Proyecto de diseño de packaging
+------------------------
+Juan López
+40
+Ingeniero de sistemas
+3500
+Proyecto de implementación de CRM
+------------------------
+María Fernández
+32
+Analista financiero
+2800
+------------------------
+Pedro Ruiz
+28
+Técnico de soporte
+2200
+Proyecto de implementación de sistemas ERP
+Proyecto de migración de servidores
+------------------------
+Sara Pérez
+31
+Gestora de recursos humanos
+2700
+Proyecto de reclutamiento y selección
+Proyecto de formación y desarrollo
+------------------------
+David Rodríguez
+35
+Consultor de negocio
+3200
+Proyecto de consultoría estratégica
+Proyecto de análisis de procesos
+Proyecto de mejora continua
+------------------------
+Elena García
+27
+Redactora de contenido
+2300
+Proyecto de creación de contenido
+------------------------
+Roberto López
+33
+Analista de datos
+2900
+Proyecto de análisis de Big Data
+Proyecto de Business Intelligence
+Proyecto de visualización de datos
+------------------------

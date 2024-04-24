@@ -1,0 +1,8 @@
+ Procesar los siguientes ficheros para obtener el listado resumen del número de alumnos que
+obtuvieron una determinada calificación por asignatura.
+LISTADO: RESUMEN DE CALIFICACIONES POR ASIGNATURAS
+NOMBRE-ASIGNATURA SUS APR BIEN NOT SOB
+XXXXXXXXXXXXXXXXXX 999 999 999 999 999
+2 FICHEROS DISPONIBLES:
+Asignat.dat: código (entero positivo) y nombre de asignatura.
+Alumnos.dat: nombre, dni y cinco pares de: código de asignatura y su calificación.

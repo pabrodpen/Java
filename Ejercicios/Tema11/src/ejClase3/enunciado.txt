@@ -1,0 +1,33 @@
+Se necesita una nueva aplicación para migrar los datos académicos de cursos anteriores a un
+nuevo formato debido al cambio de su sistema de gestión. Contamos con el archivo de texto
+generado por la aplicación anterior, con una línea por cada alumno y asignatura, con la
+siguiente estructura:
+dni;nombre;apellidos;direccion;asignatura1;notaTrimestre1;notaTrimestre2;notaTrimestre3.
+Cada alumno tiene 3 asignaturas.
+El nuevo sistema trabaja con archivos binarios y para cada alumno tendrá un registro con los
+siguientes datos:
+dni,nombre,dirección,lista de asignaturas (contiene el nombre de la asignatura y su media
+aritmética de los 3 trimestres) y nota media del curso (media de todas las asignaturas).
+Se pide:
+- Generar el archivo binario “1dam20102011.dat” con los datos anteriormente especificados.
+- Leer y mostrar el archivo binario con el siguiente formato:
+
+
+LISTADO DEL FICHERO BINARIO CREADO:
+
+
+DNI NOMBRE
+12345678 JUAN GUTIERREZ
+Nombre Asignatura Nota Media
+Programación 6
+Base de Datos 4.6
+Lenguaje de Marcas 5.4
+MEDIA DEL CURSO: 4
+------------------------------------------------------
+11111111 ANA MENAYO
+Nombre Asignatura Nota Media
+Programación 5.4
+Base de Datos 7
+Lenguaje de Marcas 4.6
+MEDIA DEL CURSO: 6.3
+------------------------------------------------------

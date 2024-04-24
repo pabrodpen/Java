@@ -1,0 +1,14 @@
+Crea un sistema de gestión de productos para una tienda en línea. Cada producto tiene 
+los siguientes datos: código, nombre, descripción, precio y stock disponible. 
+Además, cada producto puede pertenecer a una o más categorías, donde se almacena 
+información adicional como el nombre de la categoría y la cantidad de productos vendidos 
+en esa categoría. El sistema debe ofrecer las siguientes funcionalidades:
+
+Agregar producto: El usuario puede ingresar los datos de un nuevo producto y asignarlo 
+a una o más categorías.
+
+Mostrar productos por categoría: El sistema debe mostrar un listado con todos los productos 
+pertenecientes a una categoría específica, incluyendo su código, nombre, descripción, precio y 
+stock disponible.
+
+Guardar y cargar datos: El sistema debe ser capaz de guardar la información de los productos y las categorías en archivos de texto para su persistencia. También debe poder cargar los datos desde dichos archivos al iniciar el programa.
