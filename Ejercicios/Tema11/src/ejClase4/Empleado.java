@@ -1,5 +1,6 @@
 package ejClase4;
 
+
 public class Empleado {
 
 	String nombre,apellido;
@@ -16,6 +17,10 @@ public class Empleado {
 		this.cargo = cargo;
 		this.proyectos = new String[0];
 	}
+	
+
+
+	
 	
 	
 }

@@ -82,7 +82,7 @@ public class Main {
 				System.out.println(alumno.getDni()+"\t"+alumno.getNombre()+" "+alumno.getApellidos());
 				System.out.println("Asignatura\tNota Media");
 				for(int j=0;j<alumno.asignaturas.length;j++) {
-					System.out.println(alumno.getAsignaturas()[j]+"\t"+alumno.getMediasAsign()[j]);
+					System.out.println(alumno.getAsignaturas()[j].nombre+"\t"+alumno.getAsignaturas()[j].media);
 				}
 				System.out.println("MEDIA CURSO:\t"+alumno.mediaCurso());
 				System.out.println("--------------------------------------------");

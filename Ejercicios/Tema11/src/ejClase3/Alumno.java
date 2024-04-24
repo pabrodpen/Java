@@ -5,9 +5,8 @@ import java.util.Arrays;
 
 public class Alumno implements Serializable{
     String dni,nombre,apellidos,direccion;
-    String[]asignaturas;
+    Asignatura[]asignaturas;
 
-   double[]mediasAsign;
     
 
     
@@ -17,8 +16,7 @@ public class Alumno implements Serializable{
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.direccion = direccion;
-        this.asignaturas = new String[0];
-        this.mediasAsign = new double[0];
+        this.asignaturas = new Asignatura[0];
     }
 
     public String getDni() {
@@ -28,65 +26,57 @@ public class Alumno implements Serializable{
     public void setDni(String dni) {
         this.dni = dni;
     }
-    
-    
-    
+
     public String getNombre() {
-		return nombre;
-	}
+        return nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getApellidos() {
-		return apellidos;
-	}
+    public String getApellidos() {
+        return apellidos;
+    }
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
 
-	public String getDireccion() {
-		return direccion;
-	}
+    public String getDireccion() {
+        return direccion;
+    }
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 
-	public String[] getAsignaturas() {
-		return asignaturas;
-	}
+    public Asignatura[] getAsignaturas() {
+        return asignaturas;
+    }
 
-	public void setAsignaturas(String[] asignaturas) {
-		this.asignaturas = asignaturas;
-	}
+    public void setAsignaturas(Asignatura[] asignaturas) {
+        this.asignaturas = asignaturas;
+    }
 
-	public double[] getMediasAsign() {
-		return mediasAsign;
-	}
-
-	public void setMediasAsign(double[] mediasAsign) {
-		this.mediasAsign = mediasAsign;
-	}
-
-	public void addAsignYNota(String asignatura,int n1,int n2,int n3){
-        asignaturas=Arrays.copyOf(asignaturas, asignaturas.length+1);
-        asignaturas[asignaturas.length-1]=asignatura;
+    
+    public void addAsignYNota(String nombre,int n1,int n2,int n3){
+        
         
         double media=(double) (n1+n2+n3)/3;
         
-        mediasAsign=Arrays.copyOf(mediasAsign, mediasAsign.length+1);
-        mediasAsign[mediasAsign.length-1]=media;
+       Asignatura asignatura=new Asignatura(nombre, media);
+       
+       asignaturas=Arrays.copyOf(asignaturas, asignaturas.length+1);
+       asignaturas[asignaturas.length-1]=asignatura;
         
         
     }
     
     public double mediaCurso() {
     	double sumaMedias=0;
-    	for(int i=0;i<mediasAsign.length;i++) {
-    		sumaMedias+=mediasAsign[i];
+    	for(int i=0;i<asignaturas.length;i++) {
+    		sumaMedias+=asignaturas[i].media;
     	}
     	
     	return sumaMedias/3;
