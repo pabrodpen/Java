@@ -1,6 +1,8 @@
 package ejClase4;
 
-public class Proyecto {
+import java.io.Serializable;
+
+public class Proyecto implements Serializable{
 
 	String nombre;
 
@@ -16,6 +18,13 @@ public class Proyecto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+    @Override
+    public String toString() {
+        return "Proyecto{" + "nombre=" + nombre + '}';
+    }
+
+  
 	
 	
 }
