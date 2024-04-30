@@ -14,6 +14,7 @@ public class Main {
 		
 
 		boolean dentroComentario=false;
+
 		try {
 			BufferedReader in=new BufferedReader(new FileReader("src/amp29/codigo.txt"));
 			BufferedWriter out=new BufferedWriter(new FileWriter("src/amp29/sin_comentarios_codigo.txt"));

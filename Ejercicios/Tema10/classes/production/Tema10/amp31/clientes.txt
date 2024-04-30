@@ -1,0 +1,2 @@
+DNI	Nombre	Fecha nac	Saldo
+123	pablo	29-08-2002	23.0

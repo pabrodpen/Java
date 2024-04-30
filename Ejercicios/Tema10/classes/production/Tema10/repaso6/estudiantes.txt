@@ -1,0 +1,6 @@
+Juan 20 85,5
+María 22 90,0
+Pedro 21 78,3
+Sofía 19 95,2
+Pablo 17 74,5
+Fran 13 95,0

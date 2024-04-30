@@ -1,0 +1,27 @@
+1111-GLT
+luna trasera
+99.7
+1111-GLT
+luna delantera
+99.7
+1111-GLT
+luna lateral derecha
+100.7
+1234-GLT
+luna delantera
+99.0
+1234-GLT
+luna delantera
+399.0
+4321-THY
+faro delantero izquierdo
+36.6
+4321-THY
+faro delantero izquierdo
+56.6
+4321-THY
+faro traser0 izquierdo
+56.6
+fggthgth
+hola
+999.0
