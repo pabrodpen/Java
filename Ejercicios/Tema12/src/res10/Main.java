@@ -8,7 +8,7 @@ public class Main {
 
         for(int i = 0; i < 20; i++){
             int n=(int)(Math.random()*(10-1+1)+1);
-            lista.add(n);
+            lista.add(Integer.valueOf(n));
         }
 
         System.out.println("LISTA");

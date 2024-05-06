@@ -1,5 +1,6 @@
 package res11;
 
+import java.io.*;
 import java.util.Comparator;
 import java.util.Scanner;
 import java.util.Set;
@@ -17,6 +18,16 @@ public class Main {
         Scanner scanner=new Scanner(System.in);
         Socio socio;
         int opcion=0;
+
+        //cargamos los datos de socios.dat
+
+        try{
+            ObjectInputStream in=new ObjectInputStream(new FileInputStream("src/res11/socios.dat"));
+
+            cjtoSocios= (Set<Socio>) in.readObject();
+        }catch (IOException | ClassNotFoundException e){
+            System.out.println(e.getMessage());
+        }
 
         do{
             System.out.println("MENU");
@@ -84,6 +95,16 @@ public class Main {
                     System.out.println("ORDENADOS POR ANTIGUEDAD");
                     System.out.println(ordenadoAntiguedad);
                     break;
+
+                case 6:
+                    try{
+                        ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream("src/res11/socios.dat"));
+
+                        out.writeObject(cjtoSocios);
+                        out.close();
+                    }catch (IOException e){
+                        System.out.println(e.getMessage());
+                    }
             }
         }while(opcion!=6);
     }
