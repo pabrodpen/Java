@@ -6,10 +6,7 @@ import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static  void main(String[] args) {
@@ -46,21 +43,12 @@ public class Main {
 
                 case 3:
                     double sumaTmp=0;
-                    double maxTmp=Double.MIN_VALUE,minTmp=Double.MAX_VALUE;
                     for(Registro registro:cjtoRegistros){
-                        if(registro.getTemperatura()>maxTmp){
-                            maxTmp=registro.getTemperatura();
-                        }
-
-                        if(registro.getTemperatura()<minTmp){
-                            minTmp=registro.getTemperatura();
-                        }
-
                         sumaTmp+=registro.getTemperatura();
                     }
 
-                    System.out.println("Temperatura maxima:"+maxTmp);
-                    System.out.println("Temperatura minima:"+minTmp);
+                    System.out.println("Temperatura maxima:"+ Collections.max(cjtoRegistros));
+                    System.out.println("Temperatura minima:"+Collections.min(cjtoRegistros));
                     double media=(double) sumaTmp/cjtoRegistros.size();
                     System.out.println("Promedio:"+media);
                     break;
