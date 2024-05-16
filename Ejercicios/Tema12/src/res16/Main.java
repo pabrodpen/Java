@@ -32,13 +32,35 @@ public class Main {
         System.out.println(listaSinLetra);
 
         System.out.println("LISTADO CON LETRA");
+        //pasamos a TreeMap para que este ordenado por la key
+        Map<Character, Academico> cjtoOrdenado = new TreeMap<>(cjtoAcademicos);
+        System.out.println(cjtoOrdenado);
 
-        //usamos tambien una list
-        List<Map.Entry<Character,Academico>> listaConLetra=new ArrayList<>(cjtoAcademicos.values());
-        System.out.println("por orden de letra");
+
+        //usamos tambien una list para ordenar por nombre e ingreso
+        List<Map.Entry<Character,Academico>> listaConLetra=new ArrayList<>(cjtoAcademicos.entrySet());
+
         System.out.println("por orden de nombre");
+
+        //el nombre es el ordenado natural
+
+        Collections.sort(listaConLetra, new Comparator<Map.Entry<Character, Academico>>() {
+            @Override
+            public int compare(Map.Entry<Character, Academico> o1, Map.Entry<Character, Academico> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
+        System.out.println(listaConLetra);
+
         System.out.println("por año de ingreso");
 
+        Collections.sort(listaConLetra, new Comparator<Map.Entry<Character, Academico>>() {
+            @Override
+            public int compare(Map.Entry<Character, Academico> o1, Map.Entry<Character, Academico> o2) {
+                return o1.getValue().anioIngreso-o2.getValue().anioIngreso;
+            }
+        });
+        System.out.println(listaConLetra);
 
     }
 
