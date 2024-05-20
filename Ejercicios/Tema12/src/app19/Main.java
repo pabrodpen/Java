@@ -1,12 +1,10 @@
 package app19;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
-    public static void main(String[]args){
-        String frase="En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo " +
+    public static void main(String[] args) {
+        String frase = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo " +
                 "que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y " +
                 "galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos " +
                 "y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura " +
@@ -21,14 +19,30 @@ public class Main {
                 "que deste caso escriben; aunque por conjeturas verosímiles se deja entender que se " +
                 "llamaba Quijana. Pero esto importa poco a nuestro cuento: basta que en la narración " +
                 "dél no se salga un punto de la verdad.\n";
-        String separados[]=frase.split(" ");
+        String[] separados = frase.split(" ");
 
-        System.out.println("PALABRAS NO REPETIDAS");
-        Set<String> unicas=new HashSet<>(List.of(separados));
+        // Set para las palabras únicas
+        Set<String> unicas = new HashSet<>();
+        // Set para las palabras repetidas
+        Set<String> repetidas = new HashSet<>();
 
-        System.out.println(unicas);
+        // Iterar sobre las palabras separadas
+        for (String palabra : separados) {
+            // Si no podemos agregar a unicas, entonces ya existe y la agregamos a repetidas
+            if (!unicas.add(palabra)) {
+                repetidas.add(palabra);
+            }
+        }
+
+        // Crear lista para mostrar las palabras únicas
+        List<String> palabrasUnicas = new ArrayList<>(unicas);
+        // Remover palabras repetidas de la lista de palabras únicas
+        palabrasUnicas.removeAll(repetidas);
 
         System.out.println("PALABRAS REPETIDAS");
+        System.out.println(repetidas);
 
+        System.out.println("PALABRAS NO REPETIDAS");
+        System.out.println(palabrasUnicas);
     }
 }
