@@ -1,7 +1,5 @@
 package app34;
 
-import res14.Registro;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -45,8 +43,13 @@ public class Main {
                     while(iterator.hasNext() && !encontrado){
                         Map.Entry<LocalDate,Set<Registro>> elemento=iterator.next();
                         if(fecha.equals(elemento.getKey().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))){
-                            elemento.getValue().add(registro);
-                            encontrado=true;
+                            if(elemento.getValue().contains(registro)){
+                                System.out.println("Ese registro ya existe");
+                            }else{
+                                elemento.getValue().add(registro);
+                                encontrado=true;
+                            }
+
                         }
                     }
 
@@ -75,7 +78,7 @@ public class Main {
                     while(iterator2.hasNext() && !encontrado){
                         Map.Entry<LocalDate,Set<Registro>> elemento=iterator2.next();
 
-                        if(f.equals(elemento.getKey())){
+                        if(f.compareTo(elemento.getKey())>=0){
                             System.out.println("REGISTROS DE "+fecha);
                             System.out.println(elemento.getValue());
                             encontrado=true;
@@ -85,6 +88,7 @@ public class Main {
                     if(!encontrado){
                         System.out.println("No hay registros de "+fecha);
                     }
+                    break;
 
                 case 4:
                     Iterator<Map.Entry<LocalDate,Set<Registro>>> iterator3=cjtoRegistros.entrySet().iterator();

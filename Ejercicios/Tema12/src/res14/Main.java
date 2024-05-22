@@ -1,5 +1,7 @@
 package res14;
 
+import app34.Registro;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;

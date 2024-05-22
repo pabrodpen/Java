@@ -2,6 +2,7 @@ package app34;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Registro implements Serializable,Comparable<Registro> {
@@ -13,6 +14,9 @@ public class Registro implements Serializable,Comparable<Registro> {
     public Registro(String hora, double temperatura) {
         this.hora = hora;
         this.temperatura = temperatura;
+    }
+
+    public Registro(double temperatura) {
     }
 
     public String getHora() {
@@ -38,6 +42,9 @@ public class Registro implements Serializable,Comparable<Registro> {
 
     @Override
     public int compareTo(Registro o) {
-        return (int) (temperatura-o.temperatura);
+        LocalTime h1=LocalTime.parse(hora,DateTimeFormatter.ofPattern("HH:mm:ss"));
+        LocalTime h2=LocalTime.parse(o.hora,DateTimeFormatter.ofPattern("HH:mm:ss"));
+
+        return h1.compareTo(h2);
     }
 }

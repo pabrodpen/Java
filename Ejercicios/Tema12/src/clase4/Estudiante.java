@@ -1,17 +1,22 @@
-package clase3;
+package clase4;
 
 import java.io.Serializable;
 
-public class Estudiante implements Serializable,Comparable<Estudiante> {
+public class Estudiante implements Serializable {
+    int cod;
     String nombre;
     int edad;
     double media;
+    String carrera;
 
-    public Estudiante(String nombre, int edad, double media) {
+    public Estudiante(int cod, String nombre, int edad, double media, String carrera) {
+        this.cod = cod;
         this.nombre = nombre;
         this.edad = edad;
         this.media = media;
+        this.carrera = carrera;
     }
+
 
     @Override
     public String toString() {
@@ -19,11 +24,11 @@ public class Estudiante implements Serializable,Comparable<Estudiante> {
                 "nombre='" + nombre + '\'' +
                 ", edad=" + edad +
                 ", media=" + media +
+                ", carrera='" + carrera + '\'' +
                 '}';
     }
 
-    @Override
-    public int compareTo(Estudiante o) {
-        return nombre.compareTo(o.nombre);
+    public void setMedia(double media) {
+        this.media = media;
     }
 }
